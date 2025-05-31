@@ -14,11 +14,11 @@
 		"test:ui": "vitest --ui --coverage"
 	},
 	"dependencies": {
+		"@tailwindcss/vite": "^4.1.8",
 		"@tanstack/react-query": "^5.69.0",
 		"@tanstack/react-router": "^1.114.27",
 		"@testing-library/user-event": "^14.6.1",
 		"classnames": "^2.5.1",
-		"D": "^1.0.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
 	},
@@ -42,6 +42,7 @@
 		"globals": "^15.15.0",
 		"happy-dom": "^17.4.4",
 		"prettier": "^3.5.3",
+		"tailwindcss": "^4.1.8",
 		"typescript": "~5.7.2",
 		"typescript-eslint": "^8.24.1",
 		"vite": "^6.2.0",

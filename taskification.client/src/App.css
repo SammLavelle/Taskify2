@@ -1,40 +1,38 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import "tailwindcss";
 
 /* ---- COLORS ---- */
-:root {
-	--red-light: #f7e6e6;
-	--red: #b07575;
-	--red-dark: #812727;
+@theme {
+	--color-red-light: #f7e6e6;
+	--color-red: #b07575;
+	--color-red-dark: #812727;
 
-	--orange-light: #f7efe6;
-	--orange: #cb914f;
-	--orange-dark: #8a4d07;
+	--color-orange-light: #f7efe6;
+	--color-orange: #cb914f;
+	--color-orange-dark: #8a4d07;
 
-	--yellow-light: #f7f5e6;
-	--yellow: #cfb13a;
-	--yellow-dark: #7e6811;
+	--color-yellow-light: #f7f5e6;
+	--color-yellow: #cfb13a;
+	--color-yellow-dark: #7e6811;
 
-	--green-light: #e8f7e6;
-	--green: #7f937c;
-	--green-dark: #365b31;
+	--color-green-light: #e8f7e6;
+	--color-green: #7f937c;
+	--color-green-dark: #365b31;
 
-	--white: #ffffff;
-	--black: #000000;
+	--color-white: #ffffff;
+	--color-black: #000000;
 
-	--grey-light: #f5f5f5;
-	--grey: #adadad;
-	--grey-dark: #707070;
-}
+	--color-grey-light: #f5f5f5;
+	--color-grey: #adadad;
+	--color-grey-dark: #707070;
 
-/* ---- ELEMENTS ---- */
-:root {
-	--step--1: clamp(0.7502rem, 0.8623rem + -0.1446vw, 0.8333rem);
-	--step-0: clamp(1rem, 1rem + 0vw, 1rem);
-	--step-1: clamp(1.2rem, 1.1537rem + 0.2313vw, 1.333rem);
-	--step-2: clamp(1.44rem, 1.3228rem + 0.5859vw, 1.7769rem);
-	--step-3: clamp(1.728rem, 1.5052rem + 1.1141vw, 2.3686rem);
-	--step-4: clamp(2.0736rem, 1.6966rem + 1.8848vw, 3.1573rem);
-	--step-5: clamp(2.4883rem, 1.8899rem + 2.992vw, 4.2087rem);
+	--text-sm: clamp(0.7502rem, 0.8623rem + -0.1446vw, 0.8333rem);
+	--text-base: clamp(1rem, 1rem + 0vw, 1rem);
+	--text-md: clamp(1.2rem, 1.1537rem + 0.2313vw, 1.333rem);
+	--text-xl: clamp(1.44rem, 1.3228rem + 0.5859vw, 1.7769rem);
+	--text-2xl: clamp(1.728rem, 1.5052rem + 1.1141vw, 2.3686rem);
+	--text-3xl: clamp(2.0736rem, 1.6966rem + 1.8848vw, 3.1573rem);
+	--text-4xl: clamp(2.4883rem, 1.8899rem + 2.992vw, 4.2087rem);
 }
 * {
 	box-sizing: border-box;
@@ -48,35 +46,35 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 16px;
-	color: var(--grey-dark);
+	color: var(--color-grey-dark);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
 	font-family: "Quicksand", sans-serif;
 	line-height: 1.2em;
 	font-weight: 600;
-	color: var(--black);
+	color: var(--color-black);
 	margin: 0;
 }
 h1 {
-	font-size: var(--step-5);
+	font-size: var(--text-4xl);
 }
 h2 {
-	font-size: var(--step-4);
+	font-size: var(--text-3xl);
 }
 h3 {
-	font-size: var(--step-3);
+	font-size: var(--text-2xl);
 }
 h4 {
-	font-size: var(--step-2);
+	font-size: var(--text-xl);
 }
 h5 {
-	font-size: var(--step-0);
+	font-size: var(--text-base);
 	text-transform: uppercase;
 	font-weight: 800;
 }
 h6 {
-	font-size: var(--step--1);
+	font-size: var(--text-sm);
 	text-transform: uppercase;
 	font-weight: 800;
 }
@@ -86,28 +84,6 @@ h6 {
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
-	font-size: var(--step-0);
+	font-size: var(--text-base);
 	line-height: 1.4em;
-}
-
-/* ---- STRUCTURE ---- */
-:root {
-	/* Space 3xs: 4px → 5px */
-	--space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
-	/* Space 2xs: 8px → 10px */
-	--space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
-	/* Space xs: 12px → 15px */
-	--space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
-	/* Space s: 16px → 20px */
-	--space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
-	/* Space m: 24px → 30px */
-	--space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
-	/* Space l: 32px → 40px */
-	--space-l: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
-	/* Space xl: 48px → 60px */
-	--space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
-	/* Space 2xl: 64px → 80px */
-	--space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
-	/* Space 3xl: 96px → 120px */
-	--space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
 }

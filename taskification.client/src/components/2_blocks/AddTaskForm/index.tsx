@@ -1,4 +1,5 @@
 import { useAddTaskForm } from "../../../hooks/addTaskForm/useAddTaskForm";
+import Button from "../../1_elements/Button";
 import Input from "../../1_elements/Input";
 
 const AddTaskForm = () => {
@@ -13,9 +14,9 @@ const AddTaskForm = () => {
 			>
 				{addTaskForm.errors && <p>{addTaskForm.errors}</p>}
 				<Input name="name" placeholder="Add a task" />
-				<button type="submit" disabled={addTaskForm.isLoading}>
+				<Button type="submit" disabled={addTaskForm.isLoading}>
 					Add Task
-				</button>
+				</Button>
 			</form>
 		</>
 	);
