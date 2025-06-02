@@ -12,22 +12,7 @@ const App = () => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<AddTaskForm />
-			<Button variant={ButtonVariant.Primary} style={ButtonStyle.Solid}>
-				Button
-			</Button>
 			<Button variant={ButtonVariant.Danger} style={ButtonStyle.Solid}>
-				Button
-			</Button>
-			<Button variant={ButtonVariant.Success} style={ButtonStyle.Solid}>
-				Button
-			</Button>
-			<Button variant={ButtonVariant.Primary} style={ButtonStyle.Outline}>
-				Button
-			</Button>
-			<Button variant={ButtonVariant.Danger} style={ButtonStyle.Outline}>
-				Button
-			</Button>
-			<Button variant={ButtonVariant.Success} style={ButtonStyle.Outline}>
 				Button
 			</Button>
 		</QueryClientProvider>

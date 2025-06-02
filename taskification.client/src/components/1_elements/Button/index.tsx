@@ -2,13 +2,14 @@ import classnames from "classnames";
 import { ComponentProps } from "react";
 
 export enum ButtonVariant {
-	Primary,
-	Success,
-	Danger,
+	Primary = "primary",
+	Success = "success",
+	Danger = "danger",
 }
+
 export enum ButtonStyle {
-	Solid,
-	Outline,
+	Solid = "solid",
+	Outline = "outline",
 }
 
 type ButtonProps = ComponentProps<"button"> & {
@@ -20,24 +21,23 @@ type ButtonProps = ComponentProps<"button"> & {
 
 const baseStyle = "font-medium rounded-4xl py-2 px-4 border transition";
 const disabledStyle =
-	"disabled:border-grey-light disabled:bg-grey-light disabled:text-grey";
+	"disabled:border-grey-100 disabled:bg-grey-100 disabled:text-grey-400";
 
-function generateVariantStyles(color: string) {
-	return {
-		[ButtonStyle.Solid]: `bg-${color} border-${color} text-white hover:bg-${color}-dark hover:border-${color}-dark`,
-		[ButtonStyle.Outline]: `bg-${color}-light text-${color}-dark border-${color}-dark hover:bg-${color}-dark hover:border-${color.dark} hover:text-white`,
-	};
-}
-
-const stylesMap: Record<ButtonVariant, Record<ButtonStyle, string>> = {
+const stylesMap = {
 	[ButtonVariant.Primary]: {
 		[ButtonStyle.Solid]:
-			"bg-black border-black text-white hover:bg-grey-dark hover:border-grey-dark",
+			"bg-black border-black text-white hover:bg-grey-700 hover:border-grey-700",
 		[ButtonStyle.Outline]:
-			"bg-white text-black border-black hover:bg-grey-dark hover:border-grey-dark hover:text-white",
+			"bg-white text-black border-black hover:bg-grey-700 hover:border-grey-700 hover:text-white",
 	},
-	[ButtonVariant.Danger]: generateVariantStyles("red"),
-	[ButtonVariant.Success]: generateVariantStyles("green"),
+	[ButtonVariant.Danger]: {
+		[ButtonStyle.Solid]: `bg-red-500 border-red-500 text-white hover:bg-red-700 hover:border-red-700`,
+		[ButtonStyle.Outline]: `bg-red-100 text-red-700 border-red-700 hover:bg-red-700 hover:border-red-700 hover:text-white`,
+	},
+	[ButtonVariant.Success]: {
+		[ButtonStyle.Solid]: `bg-green-500 border-green-500 text-white hover:bg-green-700 hover:border-green-700`,
+		[ButtonStyle.Outline]: `bg-green-100 text-green-700 border-green-700 hover:bg-green-700 hover:border-green-700 hover:text-white`,
+	},
 };
 const Button = ({
 	className,

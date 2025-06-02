@@ -34,4 +34,4 @@ export default [js.configs.recommended, {
         "react/no-unescaped-entities": "off",
         "react/prop-types": "off",
     },
-}, prettier, ...storybook.configs["flat/recommended"], ...storybook.configs["flat/recommended"]];
+}, prettier, ...storybook.configs["flat/recommended"], ...storybook.configs["flat/recommended"], ...storybook.configs["flat/recommended"]];
